@@ -1,0 +1,109 @@
+
+
+<div class="container">
+  
+
+
+<!-- user info form -->
+  <div class="row">
+    <div class="col-md-12 text-center" ng-show="!editing">
+
+      <img class="img-circle" ng-src="{{user.user_profile.profile_picture}}" height="75px" width="75px">
+
+      <!-- <button ng-click="editing = !editing"> Edit </button>  -->
+      <div class="form-width" ng-hide="editing" ng-click="editing= true">
+        <div class="setting-spacing1">
+          <label class="setting-title">Name:</label>
+          <p class="settings-p">{{user.user_profile.name}}</p>
+        </div>
+
+        <div class="setting-spacing">
+          <label class="setting-title">Email:</label>
+          <p class="settings-p">{{user.login.local.email}}</p>
+        </div>
+
+        <div class="setting-spacing">
+          <label class="setting-title">Password:</label>
+          <p class="settings-password">Change password</p>
+        </div>
+      
+        <div class="setting-spacing">
+          <label class="setting-title">Company:</label>
+          <p class="settings-password">{{user.user_profile.company_name}}</p>
+        </div>
+
+        <div class="setting-spacing">
+          <label class="setting-title">Location:</label>
+          <p class="settings-location">{{user.user_profile.location}}</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="row">  
+          <div class="col-md-12 container" ng-show="editing">
+            
+
+
+            <div class="container form-width">
+              
+              
+
+            <div class="container text-center">
+
+             <div style="cursor:pointer" class="img-circle-button"  ngf-select ngf-change="upload(files)" ng-model="files" ng-click="editing = true">
+                <img class="img-circle edit-img"  ng-src="{{user.user_profile.profile_picture}}"  height="75px" width="75px" >
+              </div> 
+            </div>
+
+
+            <form ng-show="editing" ng-submit="updateClient(updateUser)">
+              <div class="edit-spacing1">
+                <label class="setting-title">Name:</label>
+                <input class="camper-dashboard-input edit-p" type="text" placeholder="{{user.user_profile.name}}" ng-model="user.user_profile.name">
+              </div>
+
+              <div class="edit-spacing">
+                 <label class="setting-title">Email:</label>
+                 <input class="camper-dashboard-input edit-p" type="text" placeholder="{{user.login.local.email}}" ng-model="user.login.local.email">
+              </div>
+
+              <div class="edit-spacing">
+                <label class="setting-title">Password:</label>
+                <input class="camper-dashboard-input edit-password" type="password" placeholder="Change password" ng-model="user.login.local.password">
+              </div>
+
+              <div class="edit-spacing">
+                <label class="setting-title">Company:</label>
+                <input class="camper-dashboard-input edit-password" type="text" placeholder="{{user.user_profile.company_name}}" ng-model="user.user_profile.company_name">
+              </div>
+
+            
+
+              <div class="edit-spacing">
+                <label class="setting-title">Location:</label>
+                <input class="camper-dashboard-input edit-password" type="text" placeholder="{{user.user_profile.location}}" ng-model="user.user_profile.location">
+              </div>
+                
+              <div class="text-center">
+                <button class="update-account-button" type="submit">Update</button>
+                <a style="cursor:pointer" class="cancel" ng-click="editing = false"> Cancel </a>  
+              </div>
+      
+              
+            </form>
+          </div>
+      </div>
+
+
+        
+     
+  </div>
+
+
+</div>
+
+
+
+
+
+	

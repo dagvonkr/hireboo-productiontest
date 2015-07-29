@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			
+			<div id="form-container">
+				<div class="page-header text-center">
+					<h2>Client Registration</h2>
+
+					<div id="status-buttons" class="text-center">
+
+						<a ui-sref-active="active" ui-sref=".login_info"> <span> 1 </span> Login </a>
+						<!-- <a ui-sref-active="active" ui-sref=".info"> <span> 2 </span> info </a> -->
+						<a ui-sref-active="active" ui-sref=".profile" > <span> 2 </span> Profile </a>
+
+					</div>
+				</div>
+
+				<form id="sign_in_form" ng-submit="save_user()">
+					<div id="form-views" ui-view ></div>
+				</form>
+			</div>
+			<pre>
+				{{user}}
+			</pre>
+		</div>
+	</div>
+</div>

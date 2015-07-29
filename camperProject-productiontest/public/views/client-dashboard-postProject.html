@@ -1,0 +1,173 @@
+<div class="container"> 
+
+<!-- post project form -->
+
+<div class="row post-form" ng-if="!editing">
+  <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 text-center">
+
+    <button class="post-it update-account-button" ng-hide="editProject" ng-click="editProject= true">Post a Project + </button>
+    <form ng-show="editProject" ng-submit="submitProject(newProject)">
+
+      <h5 class="form-title">Title:</h5>
+      <input class="form-control" type="text" ng-model="newProject.description.title" placeholder="Project Title">
+
+      <h5 class="form-title">Current Website:</h5>
+      <input class="form-control" maxlength="100" type="text" ng-model="newProject.description.client_website" placeholder="Current Website">
+
+      <h5 class="form-title">Project Description:</h5>
+      <textarea class="form-control" ng-model="newProject.description.description" placeholder="Tell us a little bit about what you want built..."></textarea>  
+
+      <h5 class="form-title">Design Provided:</h5>    
+       <p class="form-title"> 
+        <label for="complete_yes"> <input ng-model="newProject.description.design_provided" type="radio" name="complete" value="true" id="complete_yes"/>Yes</label>
+        <label for="complete_no">  <input ng-model="newProject.description.design_provided" type="radio" name="complete" value="false" id="complete_no"/> No</label> 
+      </p>
+
+      <h5 class="form-title">Inspiration Sites:</h5>
+      <p>
+        <input class="post-input form-control" placeholder="https://sitename.com" type="text" ng-model="newProject.description.examples[0]"/><br>
+        <input class="post-input form-control" placeholder="https://sitename.com" type="text" ng-model="newProject.description.examples[1]"/><br>
+        <input class="post-input form-control" placeholder="https://sitename.com" type="text" ng-model="newProject.description.examples[2]"/> 
+      </p>
+
+      <h5 class="form-title">I want a:</h5>
+      <p class="form-title">
+        <label class="checkbox-inline " ><input type="radio" ng-model="newProject.description.platform"  value="Web-Development">Website</label> 
+        <label class="checkbox-inline "><input type="radio" ng-model="newProject.description.platform" value="iOs">iOs Application</label>
+        <label class="checkbox-inline"><input type="radio" ng-model="newProject.description.platform" value="Android">Android Application</label> 
+      </p>
+
+      <div>
+        <button class="update-account-button" type="submit" ng-click="editProject = false">Submit</button>
+        <a style="cursor:pointer" class="cancel" ng-click="editProject = false">Cancel</a> 
+      </div>
+      
+    </form>    
+  </div>
+</div>
+
+
+<!-- list of projects posted -->
+<div class="row posted-row">
+
+  <div  class="col-md-12" ng-repeat="project in user.projects" ng-show="!editingProjects">
+
+  <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+  
+    <div class="col-md-12 project-posted-text">
+      <div class="col-md-9 col-sm-9 col-xs-9">
+        <span ng-click="isReplyFormOpen = !isReplyFormOpen" ng-hide="isReplyFormOpen" class="glyphicon glyphicon-chevron-down"></span>
+        <span ng-show="isReplyFormOpen" class="glyphicon glyphicon-chevron-up"></span>
+        <h5 class="project-active-text toggle-title-open" style="cursor:pointer" ng-click="isReplyFormOpen = !isReplyFormOpen">{{project.description.title}}</h5>
+      </div>    
+      <div class="col-md-3 col-sm-3 col-xs-3">
+        <img class="edit-project-icons" data-toggle="tooltip" data-placement="bottom" title="Edit Project" ng-click="currentProject(project)" style="cursor:pointer" src="/img/edit.svg" height="20px" width="20px" alt=""> 
+        <img  data-toggle="tooltip" data-placement="bottom" title="Chat"ng-click="goToChat(project._id)" ng-if="project.assigned_to" style="cursor:pointer" src="/img/chat.svg" height="25px" width="25px" alt="">
+        <img data-toggle="tooltip" data-placement="bottom" title="Project Paid" ng-if="project.status.project-paid" src="/img/money.svg" height="25px" width="25px" alt="">
+        <img data-toggle="tooltip" data-placement="bottom" title="Project Finsihed" ng-if="!project.assigned_to" src="/img/finished.svg" height="35px" width="20px" alt="finshed">  
+        <img data-toggle="tooltip" data-placement="bottom" title="Delete Project" ng-click="deleteProject(project)" ng-if="!project.assigned_to" style="cursor:pointer" src="/img/delete.svg" height="15px" width="15px" alt="">   
+      </div>     
+    </div>
+
+   </div> 
+    
+  <div class="col-md-4 col-md-offset-4">
+         
+    <div ng-show="isReplyFormOpen" class="test-width">
+
+      <div class="subheading text-center">
+        <h4>{{project.description.title}}</h4>
+      </div>
+
+      <div class="date text-center">
+        <h6 class="listing-header">{{project.date_range.date_posted | date: short}}</h6>
+      </div>
+
+      <div class="website text-center">
+        <p><a class="main-website" ng-href="{{project.description.client_website}}" target="_blank">{{project.description.client_website}}</a></p>
+      </div>
+
+      <div class="listing-info-spacing">
+
+        <div class="description">
+          <h5 class="heading">Description:</h5>
+          <p>{{project.description.description}}</p>     
+        </div>
+
+        <div class="inspiration-sites">
+          <h5 class="heading">Inspiration Sites:</h5>
+          <p><a ng-repeat="urls in project.description.examples track by $index" href="{{inspiration}}" target="_blank">{{urls}}</a></p>          
+        </div>
+
+        <div class="design-provided">
+          <h5 class="heading">Design Provided:</h5>
+          <p class="design-provided-p" ng-if="project.description.design_provided"> Yes </p>
+          <p class="design-provided-p" ng-if="!project.description.design_provided"> No </p>  
+        </div>
+
+
+        <div class="platform">
+          <h5 class="heading">Platform:</h5>
+          <p>{{project.description.platform}}</p>     
+        </div>
+        
+      </div> 
+
+    </div>
+  </div>    
+
+  </div>  
+
+  <!-- editing project form -->
+
+  <div class="col-md-4 col-md-offset-4 text-center">
+    <div class="row" ng-show="editingProjects">
+      
+      <form ng-submit="editingProjects = false; updateProjectFn(projectShow)">
+
+        <h5 class="form-title">Title:</h5>
+        <input class="form-control" type="text" ng-model="projectShow.description.title" placeholder="Project Title">
+
+        <h5 class="form-title">Current Website:</h5>
+        <input class="form-control" maxlength="100" type="text" ng-model="projectShow.description.client_website" placeholder="{{projectShow.description.client_website}}">
+
+        
+        <h5 class="form-title">Project Description:</h5>
+        <textarea class="form-control" type="text" ng-model="projectShow.description.description" placeholder="{{projectShow.description.description}}"></textarea>
+
+        
+
+        <h5 class="form-title">Design Provided:</h5>    
+        <p class="form-title"> 
+          <label for="complete_yes"> <input ng-model="projectShow.description.design_provided" type="radio" name="complete" value="true" id="complete_yes"/>Yes</label>
+          <label for="complete_no"> <input ng-model="projectShow.description.design_provided" type="radio" name="complete" value="false" id="complete_no"/> No</label> 
+        </p>
+
+        
+
+        <h5 class="form-title">Inspiration Sites:</h5>
+        <p>
+          <input class="post-input form-control" placeholder="{{projectShow.description.examples[0]}}" type="text" ng-model="projectShow.description.examples[0]"/><br>
+          <input class="post-input form-control" placeholder="{{projectShow.description.examples[1]}}" type="text" ng-model="projectShow.description.examples[1]"/><br>
+          <input class="post-input form-control" placeholder="{{projectShow.description.examples[2]}}" type="text" ng-model="projectShow.description.examples[2]"/> 
+        </p>
+
+
+        <h5 class="form-title">I want a:</h5>
+        <p class="form-title">
+          <label class="checkbox-inline" ><input type="radio" ng-model="projectShow.description.platform"  value="Web-Development">Website</label> 
+          <label class="checkbox-inline "><input type="radio" ng-model="projectShow.description.platform" value="iOs">iOs Application</label>
+          <label class="checkbox-inline"><input type="radio" ng-model="projectShow.description.platform" value="Android">Android Application</label> 
+        </p>
+
+        <div>
+          <button class="update-account-button" type="submit">Update</button>
+          <a style="cursor:pointer" class="cancel" ng-click="editingProjects = false">Cancel</a> 
+       </div>
+
+      </form>
+    </div>
+  </div> 
+
+</div>  
+

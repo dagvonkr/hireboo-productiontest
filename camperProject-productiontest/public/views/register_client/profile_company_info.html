@@ -1,0 +1,18 @@
+
+
+<div class="form-group">
+	<div class="col-xs-6">
+		<label>company name</label>
+			<input type="text" class="form-control" ng-model="user.user_profile.name" value="bob">
+	</div>
+	
+	<div class="col-xs-6">
+		<label> company location </label>
+			<select class="form-control" ng-model="user.user_profile.location" ng-options="abr for (abr, full) in states"></select>
+	</div>
+</div>
+
+<div class="text-center" id="btn-section">
+	
+	<button type="submit" class="btn btn-block btn-default" id="button"> profile <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+</div>

@@ -1,0 +1,26 @@
+{
+	"login" : {
+		"local" : {
+			"email" : "brothus@gmail.com",
+			"password" : "hello"
+		}
+	},	
+
+	"user_general" : {
+		"name": "Bro Brothus",
+		"email" : "brothus@gmail.com",
+		"phone" : "801 512-8121",
+		"city" : "Provo",
+		"state" : "UT"
+	},
+
+	"user_type" : {
+		"camper" : true
+	},
+
+	"camper_info" : {
+		"area" : "web-development"
+	}
+
+	
+}

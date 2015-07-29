@@ -1,0 +1,28 @@
+<div class="container">
+  <div>
+  
+    
+
+
+    <div ng-repeat="active in user.projects" class="active-row" >
+    <div class="row testme">
+      <div ng-if="active.description.title">
+        <div class="col-md-5 col-md-offset-3">
+          <h5 class="project-active-text" style="cursor:pointer" ng-click="goToChatDev(active._id)">{{active.description.title}}</h5>   
+        </div>
+        <div class="col-md-1">
+          <img style="cursor:pointer" ng-click="goToChatDev(active._id)" src="img/chat.svg" height="35px" width="25px" alt="">    
+        </div>
+
+      </div>
+      <div ng-if="!active.description.title">
+        <p> No active projects yet </p>
+      </div>
+       
+    </div>
+     
+
+    </div>
+  </div> 
+  
+</div>

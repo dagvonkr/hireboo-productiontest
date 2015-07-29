@@ -1,0 +1,68 @@
+<div class="container">
+
+  <div class="row text-center">
+    <div class="col-md-12 dashboard-spacing-dev-title">
+      <h2 class="listing-header">Available Listings</h2> 
+    </div>   
+  </div>
+
+  <div class="container-list">
+    <div ng-if=""></div>
+    <div class="row" infinite-scroll="show_scroll()" infinite-scroll-disabled="scroll">
+      <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="list in listing">
+        <div class="test-width">
+          <h4 class="text-center finished-text subheading">{{list.description.title}}</h4>
+          <div>
+            <div class="text-center">
+
+              <div class="date">
+                <h6 class="listing-header">{{list.date_range.date_posted | date: short}}</h6>
+              </div>
+              
+              <div class="website">
+                <p><a class="main-website"ng-href="{{list.description.client_website}}">{{list.description.client_website}}</a></p>  
+              </div>
+              
+            </div>
+
+            <div class="listing-info-spacing">
+
+              <div class="description">
+                <h5 class="heading">Description:</h5>
+                <p>{{list.description.description}}</p>     
+              </div>
+
+              <div class="inspiration-sites">
+                <h5 class="heading">Inspiration Sites:</h5>
+                <p><a ng-repeat="inspiration in list.description.examples track by $index" href="{{inspiration}}" target="_blank"> {{inspiration}}</a></p>          
+              </div>
+       
+              <div class="design-provided">
+                <h5 class="heading">Design Provided:</h5>
+                <p class="design-provided-p" ng-if="list.description.design_provided"> Yes </p>
+                <p class="design-provided-p" ng-if="!list.description.design_provided"> No </p>  
+              </div>
+
+              <div class="platform">
+                <h5 class="heading">Platform:</h5>
+                <p>{{list.description.platform}}</p>     
+              </div>
+     
+            </div> 
+
+            <div class="text-center">
+
+              <div class="book-it">
+                <div class="text-danger">{{error}}</div>
+                <button class="bookit-button" ng-click = "bookit(list._id)">Book it </button>  
+              </div>
+
+            </div>
+
+          </div>
+        </div>      
+      </div>
+    </div> 
+  </div> 
+  
+</div>

@@ -1,0 +1,160 @@
+
+#button {
+    width: auto;
+    margin-top: 15px;
+}
+
+#btnsection{
+    height: 100%;
+    
+}
+.col-xs-offset-4 {
+    padding:0 ;
+}
+.btn-block {
+    padding: 16px;
+}
+.radio {
+      margin-bottom: 20px;
+}
+.radio input[type="radio"] {
+    margin-left: -30px;
+}
+.radio label {
+    padding-left: 0;
+}
+.subheading-spacing-register {
+    margin-bottom: 20px;
+}
+/* add team form*/
+
+/* form styling */
+#form-container                {
+    color: #9a9a9a;  
+    margin-bottom:20px;
+    border-radius:5px; 
+}
+#form-container .page-header   { 
+    margin:0; padding:30px; 
+    border-top-left-radius:5px; 
+    border-top-right-radius:5px;
+    border-bottom: 0;
+    color: #757575; 
+}
+
+/* numbered buttons */
+#status-buttons                 { 
+    margin-top: 0px; 
+}
+#status-buttons a               { 
+    color:#757575; 
+    display:inline-block; 
+    font-size:11px; 
+    margin-right:30px; 
+    text-align:center; 
+    text-transform:uppercase; 
+}
+#status-buttons a:hover         { 
+    text-decoration:none; 
+}
+.btn-info {
+  color: #5bc0de;
+  background-color: transparent; 
+  border-color: #46b8da; 
+}
+.btn-info {
+  color: #68bddc;
+  background-color: transparent; 
+  border: 2px solid #68bddc; 
+  text-transform: uppercase;
+}
+.btn-info:hover {
+  color: #fff;
+  background-color: #68bddc; 
+  border: 2px solid #68bddc;
+}
+/* we will style the span as the circled number */
+#status-buttons span            { 
+    display:block; 
+    height:30px; 
+    margin:0 auto 10px; 
+    padding-top:15px; 
+    width:30px; 
+    border-radius:50%;
+    color: #757575;; 
+}
+
+/* active buttons turn light green-blue*/
+#status-buttons a.active span   {
+ color: #68bddc;
+}
+
+#userType-group {
+    color: #29FBEF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ANIMATION STYLINGS
+============================================================================= */
+#team-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
+#sign_in_form         { position:relative; min-height:300px; overflow:hidden; }
+#form-views           { width:auto; }
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+}
+    
+/* enter animation */
+#form-views.ng-enter            { 
+    -webkit-animation:slideInRight 0.5s both ease;
+    -moz-animation:slideInRight 0.5s both ease;
+    animation:slideInRight 0.5s both ease; 
+}
+
+/* leave animation */
+#form-views.ng-leave            { 
+    -webkit-animation:slideOutLeft 0.5s both ease;
+    -moz-animation:slideOutLeft 0.5s both ease;
+    animation:slideOutLeft 0.5s both ease;   
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {  
+    to      { -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+    to      { -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(200%); }
+    to      { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from    { -moz-transform:translateX(200%); }
+    to      { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from    { -webkit-transform:translateX(200%); }
+    to      { -webkit-transform: translateX(0); }
+}

@@ -1,0 +1,96 @@
+
+
+
+<div class="text-center">
+
+
+	 <div class="button" ngf-select ngf-change="upload(files)" ng-model="files">
+		<img class="img-circle"  ngf-src="files[0]" ngf-default-src="{{user.user_profile.profile_picture}}"  height="75px" width="75px" >
+	</div> 
+
+</div>
+
+<!-- settings -->
+<div class="row">
+	<div class="col-md-12 text-center dashboard-spacing-dev">	
+		<div class="form-width" ng-hide="editing" ng-click="editing = true"> 
+			<div class="setting-spacing1">
+				<label class="setting-title">Name:</label>
+				<p class="settings-p">{{user.user_profile.name}}</p>
+			</div>
+
+			<div class="setting-spacing">
+				<label class="setting-title">Email:</label>
+				<p class="settings-p">{{user.login.local.email}}</p>
+			</div>
+
+			<div class="setting-spacing">
+				<label class="setting-title">Password:</label>
+				<p class="settings-password">Change password</p>
+			</div>
+			
+			<div class="setting-spacing">
+				<label class="setting-title">Phone Number:</label>
+				<p class="settings-number">{{user.user_profile.phone}}</p>
+			</div>
+
+			<div class="setting-spacing">
+				<label class="setting-title">Bootcamp:</label>
+				<p class="settings-password"><span class="school_name">{{user.camper_info.school[0].school_name}}</span>{{user.camper_info.school[0].location.city}} {{user.camper_info.school[0].location.state}}</p>
+			</div>
+
+			<div class="setting-spacing" ng-if="user.camper_info.platform">
+				<label class="setting-title">Platform:</label>
+				<p class="settings-password">{{user.camper_info.languages}}</p>
+			</div>
+
+				<!-- Bootcamp: {{user.camp_info.school}} -->
+		</div>
+			<form class="form-width" ng-show="editing" ng-submit="editing = false; updateUserFn(updateUser)">
+				<div class="edit-spacing1">
+					<label class="setting-title">Name:</label> 
+					<input class="camper-dashboard-input edit-p" ng-model="user.user_profile.name" type="text" placeholder="{{user.user_profile.name}}" />	
+				</div>
+
+				<div class="edit-spacing">
+					<label class="setting-title">Email:</label> 
+					<input class="camper-dashboard-input edit-p" ng-model="user.login.local.email" type="text" placeholder="{{user.login.local.email}}" />	
+				</div>
+
+				<div class="edit-spacing">
+					<label class="setting-title">Password:</label> 
+					<input class="camper-dashboard-input edit-password" ng-model="user.login.local.password" type="password" placeholder="•••••••"/>	
+				</div>
+
+				<div class="edit-spacing">
+					<label class="setting-title">Phone Number:</label> 
+					<input class="camper-dashboard-input edit-number" ng-model="user.user_profile.phone" type="text" placeholder="{{user.user_profile.phone}}"/>	
+				</div>
+
+				<div class="edit-spacing">
+					<label class="setting-title">Bootcamp:</label> 
+					<input class="camper-dashboard-input edit-password" ng-model="user.camper_info.school" type="text" placeholder="{{user.camper_info.school[0].school_name}}"/>	
+				</div>
+
+				<div class="edit-spacing">
+					<label class="setting-title">Platform:</label> 
+<!-- 					<input class="camper-dashboard-input edit-password" ng-model="user.camper_info.area" type="text" placeholder="{{user.camper_info.area}}"/> -->
+					<label><input type="radio" ng-model="user.camper_info.languages"  value="web-development">Website</label>     			
+					<label><input type="radio" ng-model="user.camper_info.languages" value="ios">iOs Application</label>
+    			<label><input type="radio" ng-model="user.camper_info.languages" value="android">Android Application</label>
+				</div>
+			
+				<!-- <label> Bootcamp Name </label> 
+				<input ng-model="camper.bootcamp" type="text" placeholder="{{user.camp_info.school}}" /> -->
+				<div class="text-center">
+					<button class="update-account-button" type="submit"> Update </button>
+					<a style="cursor:pointer" class="cancel" ng-click="editing = false"> Cancel </a>
+				</div>
+
+			</form>
+	</div>	
+
+
+</div>
+
+

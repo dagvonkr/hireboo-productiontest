@@ -1,0 +1,12 @@
+<div class="from-group">
+	
+	<div class="col-xs-6">
+		<label > Whats your name? </label>
+			<input class="form-control" type="text" ng-model="user.user_profile.name">
+	</div>
+
+	<div class="col-xs-6">
+		<label > Where ya at? </label>
+			<select class="form-control" ng-model="user.user_profile.location" ng-options="abr for (abr, full) in states" ></select>
+	</div>
+</div>

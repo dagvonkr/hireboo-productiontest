@@ -1,0 +1,18 @@
+{
+  "description": {
+    "title": "Build a footwear ecommerce website",
+    "client_website": "www.jackewin.com",
+    "description": "I have a footwear company that needs an ecommerce website here are some of the ecommerce sites that I like and hope to have the same functionality Look forward to hearing from you",
+    "examples": [
+      {"url": "https://www.warbyparker.com/"}, 
+      {"url": "https://www.harrys.com/"}, 
+      {"url": "https://order.sweetgreen.com/"}
+    ],
+    "design_provided": true,
+    "platform": "web-development"
+
+  }
+
+
+}
+

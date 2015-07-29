@@ -1,0 +1,34 @@
+<div class="container">
+
+
+	<h2>Jordan!!! Style this as you please. :-) </h2>
+	<h3>client Register page</h3>
+	<form ng-submit="register_client()">
+		<div class="form-group">
+
+			<label>email:</label>
+			<input type="email" class="form-control" ng-model="user.login.local.email">
+
+		</div>	
+
+		<div class="form-group">
+
+			<label>password:</label>
+			<input type="password" class="form-control" ng-model="user.login.local.password">
+
+		</div>
+
+		<button type="submit" class="btn btn-primary">Register</button> 
+	</form>
+
+
+
+	<!-- Remove this when you don't need it -->
+	<pre>
+
+		{{ user }}
+		
+	</pre>
+
+
+</div>

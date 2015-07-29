@@ -1,0 +1,832 @@
+/*Global  */
+html {
+  font-family: 'gtwalsheim-medium';
+  padding-top: 70px; 
+  background: #fff;
+  position: relative;
+  min-height: 100%;
+}
+body { 
+  font-family: 'gtwalsheim-medium';
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+label {
+  font-family: 'gtwalsheim-medium';
+  letter-spacing: 1px;
+}
+.container {
+  width: 100%;
+  padding: 0;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 70px;
+  border-top: 2px solid #eeeff1;
+  text-align: center;
+}
+.foot-text {
+  padding-top: 20px;
+  color: #757575;
+}
+span.glyphicon.glyphicon-heart {
+  color: red;
+}
+nav {
+  background-color: #fff;
+	-webkit-box-shadow: 0 5px 5px -7px #5a5b5b;
+	   -moz-box-shadow: 0 5px 5px -7px #5a5b5b;
+	        box-shadow: 0 5px 5px -7px #5a5b5b;
+}
+img {
+  margin: 5px;
+}
+.navbar-fixed-top {
+  height: 80px;
+}
+
+.find-projects-nav {
+  left: 50px;
+}
+
+.hide-nav-while-loading{
+  font-size: 0px;
+}
+.small-nav-text {
+  margin-top: 35px;
+  color: #757575;
+  text-transform: uppercase;
+}
+.small-nav-text:hover {
+  color: #3c7f98;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'gtwalsheim-medium'; 
+}
+a:hover, a:focus {
+  color: none;
+  text-decoration: none;
+}
+button {
+  padding: 10px 35px;
+  border: 3px solid #000;
+  background-color: transparent;
+  color: #000;
+}
+button:focus { 
+  outline:none;
+}
+button:hover {
+  color: #68bddc;
+}
+p {
+  margin: 0 0 10px;
+  font-family: 'ptsans-regular';
+}
+p.ng-scope {
+  margin-top: 35px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #a0a1a2;
+}
+p.ng-scope:hover {
+  color: #3c7f98;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+.col-md-4, .col-md-6, .col-md-3, .col-md-12 {
+  padding:0;
+}
+.camper-dashboard-input {
+	border: none;
+}
+
+::-moz-selection {
+  background-color: #ff5e00;
+  color: #fff;
+}
+.logo {
+  color: #3c7f98;
+  padding-left: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 18px;
+  font-family: 'gtwalsheim-medium';
+
+}
+/* Works in Safari */
+::selection {
+  background-color: #ff5e00;
+  color: #fff;
+}
+/*landing page */
+.top-spacing {
+  height: 600px;
+}
+.jumboimg {
+  background-image: url('/img/frontimg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #272425;
+
+}
+.header-width {
+  width: 75%;
+  text-align: left;
+  margin: 0 auto;
+  color: #fff;
+}
+.main-button {
+  padding: 15px 40px;
+  border: 3px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 7px;
+  text-transform: uppercase;
+}
+.main-button:hover {
+  border: 3px solid #68bddc;
+  color: #68bddc;
+}
+
+.title-how-it-works {
+  padding-top: 53px;
+}
+
+.title-hudred-prosent {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.title-spacing {
+  margin-top: 50px;
+  margin-bottom: 30px
+}
+.sub-title-spacing {
+  margin: 0 auto;
+  text-align: center;
+}
+.top-header-spacing {
+  top: 175px;
+}
+.top-btn-spacing {
+  margin-top:40px;
+}
+.section-height-one {
+  height:400px;
+}
+
+.background-blue {
+  background-color: #f8fdff;
+  padding-bottom: 45px;
+}
+
+.hundredprosent {
+  padding-top: 100px;
+}
+
+.section-height-one {
+  color: #fff;
+}
+.section-height-two {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.services{
+  font-size: 16px;
+  word-spacing: 20px;
+  text-align: center;
+}
+.landingpage-icons {
+  padding-bottom: 70px;
+}
+.section-height-three {
+  background-color: #f8fdff;
+  height:240px;
+}
+
+.about-us-p {
+  font-size: 32px;
+  text-align: center;
+}
+.heading {
+  color: #68bddc;
+
+}
+.subheading {
+  color: #3c7f98;
+  margin-top: 10px;
+
+}
+.title {
+  color: #68bddc;
+  text-transform: uppercase;
+}
+.steps-p {
+ color: #9a9a9a;
+ font-size: 14px;
+ margin-bottom: 50px;
+}
+.topspacing-meet-campers {
+  margin-top: 100px;
+}
+.subheading-meet-campers {
+  margin-top: 110px;
+}
+.imgspacing-meet-campers {
+  margin-top: 35px;
+}
+.buttonspacing-meet-campers {
+  margin-top: 75px;
+}
+.meet-width {
+  width: 55%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.bootcamp-name-filter{
+  background: #fff;
+  opacity: 0.8;
+}
+
+.bootcamp-name {
+  text-transform: uppercase;
+  color: #3c7f98;
+}
+.button-meet-campers {
+  padding: 20px 70px;
+  background-color: #68bddc;
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  margin-bottom: 75px;
+  border-radius: 7px;
+  text-transform: uppercase;
+}
+.button-meet-campers:hover {
+  background-color: transparent;
+  color: #68bddc;
+  border: 2px solid #68bddc;
+}
+.built-title {
+  margin-top: 30px;
+}
+.built-serv-exp {
+  margin-top: 70px;
+}
+.login-out-button {
+  margin-top: 20px;
+  border: 2px solid #3c7f98;
+  padding: 7px 18px;
+  background-color: #fff;
+  color: #3c7f98;
+  margin-right: -25px;
+  border-radius: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.login-out-button a {
+  color: #3c7f98;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.login-out-button:hover {
+  border: 2px solid #c1cdd4;
+  color: #c1cdd4;
+}
+.login-out-button:hover a {
+  color: #c1cdd4;
+}
+/*login*/
+.login-botton {
+  width: 100%;
+  color: #fff;
+  background-color: #3c7f98;
+  font-size: 20px;
+  border: 0; 
+}
+.login-botton:hover {
+  background-color: #c1cdd4;
+  color: #3c7f98;
+  border:0;
+}
+.login-topspacing {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.form-control {
+  border: 2px solid #c1cdd4;
+  height: 50px;
+  border-radius: 7px;
+}
+.form-control:focus {
+  border-color: #457376;;
+}
+.forgot-password {
+  margin-top: 15px;
+}
+/*Developer Dashboard*/
+.dashboard-spacing-dev-title {
+  margin-top: 20px;
+}
+.dashboard-spacing-dev {
+  margin-top: 5px;
+}
+.form-width {
+  width: 45%;
+  text-align: left;
+  margin: 0 auto;
+  color: #000;
+  padding: 20px 0;
+}
+.settings-p, .settings-password, .settings-number, .settings-location {
+  display: inline;
+  color: #a0a1a2;
+}
+.settings-p { 
+  padding-left: 105px;
+}
+.settings-number {
+  padding-left: 40px;
+}
+.settings-location {
+  padding-left: 80px;
+}
+.settings-password {
+  padding-left:75px;
+}
+.school_name {
+  font-size: 2em;
+}
+
+
+.edit-p {
+  padding: 5px 0px 5px 20px;
+  width: 100%;
+  color: #68bddc;
+  background-color: #eeeeee
+}
+input[type="radio"] {
+  margin: 2px 12px 0px 5px;
+}
+.edit-password {
+  padding: 5px 0px 5px 20px;
+  width: 100%;
+  color: #68bddc;
+  background-color: #eeeeee
+}
+.edit-number {
+  padding: 5px 0px 5px 20px;
+  width: 100%;
+  color: #68bddc;
+  background-color: #eeeeee;
+}
+.setting-spacing1 {
+  border-top: 1px solid #c1cdd4;
+}
+.setting-spacing, .setting-spacing1 {
+  border-bottom: 1px solid #c1cdd4;
+  width: 100%;
+}
+.setting-spacing:hover, .setting-spacing1:hover {
+  background-color: #eeeff1;
+}
+.edit-spacing1 {
+  border-top: 1px solid #68bddc;
+}
+.edit-spacing, .edit-spacing1 {
+  border-bottom: 1px solid #68bddc;
+   width: 100%;
+}
+label {
+  color: #a0a1a2;
+}
+.setting-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #68bddc;
+  padding-left: 20px;
+}
+.update-account-button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+  padding: 7px 35px;
+  border: 3px solid #68bddc;
+  color: #68bddc;
+  display: inline;
+  border-radius: 7px;
+}
+.update-account-button:hover {
+  border: 3px solid #a0a1a2;
+  color: #a0a1a2;
+}
+.cancel {
+  padding-left: 20px;
+  color: #a0a1a2 ;
+}
+.cancel:hover {
+  color: #68bddc ;
+}
+.project-active-text {
+  text-transform: uppercase;
+  color: #757575;
+}
+.project-active-text:hover {
+  color: #68bddc;
+}
+
+/*project listings*/
+.col-md-12.test-width.ng-scope {
+  width: 100%;
+}
+.test-width {
+  width: 95%;
+  text-align: left;
+  margin: 0 auto;
+  color: #000;
+  border: 2px solid #eeeff1;
+  height:535px; 
+  margin: 20px 0;
+  border-radius: 7px;
+}
+.container-list {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+p.ng-scope.design-provided-p {
+  margin-top: 0; 
+  text-align: left;
+  text-transform: none;
+  font-size: 14px;
+}
+p.ng-scope.design-provided-p:hover {
+  color: #757575;
+}
+.website {
+  height:20px;
+}
+.description {
+  height: 130px;
+  overflow-y: scroll;
+}
+.inspiration-sites {
+  height: 100px;
+}
+.design-provided {
+  height: 50px;
+}
+.platform {
+  height:50px;
+}
+.book-it {
+  height: 50px;
+  margin-top: 5px;
+}
+.test1 {
+  border: 2px solid #eeeff1; 
+  border-radius: 10px;
+  padding:20px 0;
+  margin-bottom: 50px;
+}
+.bookit-button {
+  border: 2px solid #68bddc;
+  color: #68bddc;
+  background-color: transparent;
+  border-radius: 7px;
+}
+.bookit-button:hover {
+  border: 2px solid #9a9a9a;
+  color: #9a9a9a;
+}
+.listing-info-spacing {
+  padding-left: 20px;
+  color: #9a9a9a;
+}
+a.ng-binding.ng-scope {
+  display: inherit;
+  color: #9a9a9a;
+}
+.main-website {
+  color: #9a9a9a;
+}
+a.ng-binding.ng-scope:hover, .main-website:hover {
+  color: #68bddc;
+}
+.listing-header {
+  color: #757575;
+}
+.page-header{
+  border-bottom: 0;
+  color: #757575; 
+}
+.finished-text {
+  color: #457376;
+  text-transform: uppercase;
+}
+/*camper active project*/
+.testme {
+  margin-top: 10px;
+}
+#status-buttons a.active, #status-buttons a:hover {
+  color: #68bddc;
+  border-bottom: 1px solid #68bddc;
+}
+
+/*client dashboard*/
+.post-form {
+  margin-bottom: 50px;
+}
+.post-it {
+  margin-top: 20px;
+}
+.form-title {
+  text-align: left;
+  color: #757575;
+}
+.checkbox-inline {
+  padding-left:0;
+}
+.post-input.input {
+  border: 1px solid black;
+  outline: none;
+}
+.posted-row {
+  margin-bottom: 100px;
+}
+.toggle-title-open {
+  display:inline;
+}
+.project-posted-text {
+  color: #757575;
+}
+
+.edit-project-icons{
+  margin-bottom: 8px;
+}
+
+span.glyphicon.glyphicon-chevron-up {
+  color: #68bddc;
+}
+.edit-img {
+  margin-bottom: 20px;
+}
+/*chat*/
+.panel {
+  box-shadow: none;
+}
+.panel-title {
+  color: #757575;
+}
+.chat-header {
+  padding-top: 10px;
+  color: #757575;
+}
+.chat-project-details {
+  margin-bottom: 50px;
+}
+.panel-default{
+  margin-top: 6px;
+  border-radius: 0px;
+  border: 2px solid #eeeff1;
+  border-radius: 7px;
+}  
+.input-group-addon {
+  background-color: transparent; 
+   border: none; 
+}
+.col-md-10 {
+  padding-right: 0px
+}
+.input-group-addon {
+  padding: 0 6px;
+}
+.panel-default > .panel-heading {
+  background-color: #FFF;
+}
+.send-message {
+  margin-top: 20px;
+}
+.fixed-project-disc {
+  position: fixed;
+  left: 50%;
+  top: 130px;
+}
+.chat-bottom-spacing {
+  margin-bottom: 40px;
+}
+.well {
+  background-color: transparent;
+}
+.cmt-title {
+  color: #68bddc;
+}
+.cmt-time, .chat-content, legend {
+  color: #a0a1a2;
+}
+legend {
+  padding: 10px;
+}
+.btn-danger {
+  color: #d43f3a;
+  background-color: transparent;
+  border-color: #d43f3a;
+   width: 50%;
+   border-radius: 0;
+   text-transform: uppercase;
+}
+.btn-success {
+  color: #449d44;
+  border-color: #449d44;
+  background-color: transparent;
+  width: 50%;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+.btn-primary {
+  color: #5bc0de;
+  border-color: #5bc0de;
+  background-color: #fff;
+  width: 50%;
+  border-radius: 2px;
+  text-transform: uppercase;;
+}
+.chat-paid-spacing {
+  margin-bottom: 10px;
+}
+.card-number, .cvc-number {
+  width: 90%;
+  padding: 10px
+}
+.expire-number {
+  width: 80%;
+  padding: 10px
+}
+.modal-dialog {
+  width: 325px;
+}
+.number, .cvc, .expire {
+  padding-left: 40px;
+}
+.legend {
+  padding: 10px
+}
+
+
+ /*iPads (portrait and landscape) ----------- */
+@media screen and (min-width : 768px) and (max-width : 1024px) {
+
+.logo {
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+p.ng-scope {
+  font-size: 12px;
+}
+
+
+}
+
+@media screen and (min-width : 479px) and (max-width : 767px) {
+
+.logo {
+  font-size: 20px;
+  margin-top: 27px;
+  padding-left: 5px;
+}
+
+p.ng-scope {
+  font-size: 10px;
+  margin-top: 37px;
+  margin-left: -20px;
+}
+
+.login-out-button {
+  margin-top: 25px;
+  border: 2px solid #3c7f98;
+  padding: 4px 12px;
+  border-radius: 7px;
+}
+
+.top-header-spacing{
+  top: 75px;
+  text-align: center;
+}
+
+.services {
+  word-spacing: 2px;
+}
+
+.form-width {
+  width: 75%;
+}
+
+}
+
+
+@media screen and (min-width : 320px) and (max-width : 480px) {
+
+/*navbar*/
+
+.logo {
+  font-size: 18px;
+  margin-top: 31px;
+  padding-left: 5px;
+  padding-right: 25px;
+  line-height: 16px;
+  }
+   
+
+p.ng-scope {
+  font-size: 10px;
+  margin-top: 30px;
+
+}
+
+p.dashboard-mobile-camper {
+  margin-top: 36px;
+}
+
+p.dashboard-mobile-client {
+  margin-top: 37px;
+}
+
+.nav-projects{
+  margin-left: -50px;
+  margin-right: 50px;
+  
+}
+.small-nav-text {
+  font-size: 10px;
+}
+
+.login-out-button {
+  margin-top: 26px;
+  border: 2px solid #3c7f98;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/*landingpage*/
+.jumboimg {
+  max-width: 100%;
+  max-height:500px;
+}
+.top-header-spacing{
+  top: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.top-btn-spacing{
+  font-size: 18px;
+  padding: 6px 30px 30px 30px;
+  width: 50;
+  height: 30px;
+}
+
+.services {
+  word-spacing: 2px;
+  font-size: 18px;
+}
+
+.button-meet-campers {
+  padding: 15px 50px;
+  background-color: #68bddc;
+  color: #fff;
+  border: 0;
+  font-size: 16px;
+  margin-bottom: 75px;
+  border-radius:7px;
+}
+
+.form-width {
+  width: 75%;
+}
+
+.foot-text {
+  font-size: 12px;
+}
+
+}
+
+
+
+

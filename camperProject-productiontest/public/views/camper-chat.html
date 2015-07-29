@@ -1,0 +1,208 @@
+
+
+  <div class="row">
+  	<div class="text-center">
+  		<h2 class="chat-header">Chat</h2>
+  	</div>
+  	<!-- I will just take those gravatar pictures from database -->
+  <!--	
+  		<div class="col-md-1 col-md-offset-4">
+  		<img src="http://www.american.edu/uploads/profiles/large/chris_palmer_profile_11.jpg" alt="Customer Picture" class="img-thumbnail img-responsive">
+  	</div>
+  	<div class="col-md-1 col-md-offset-1">
+  		<img src="http://cdn.devilsworkshop.org/files/2013/01/enlarged-facebook-profile-picture.jpg" alt="Client Picture" class="img-thumbnail img-responsive">
+  	</div>
+  -->
+  </div>
+
+  <div class="row chat-project-details">
+
+    <div class="col-md-5 col-md-offset-1 chat-bottom-spacing">
+
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          <h3 class="panel-title">Messages</h3>
+        </div>
+
+        <div class="panel-body">
+          <div class="title text-center" ng-hide="chats && chats.length > 0">
+            <span>Send you first message</span>
+          </div>
+
+          <div class="panel-body">
+            <div class="row" ng-repeat="chat in chats | filter: {statue : true}">
+              <div class="col-md-2">          
+                <img ng-src="{{chat.gravatar}}" class="img-circle comment gravatar" height="40px" width="40px">
+              </div>
+
+              <div class="col-md-10">
+                <div class="well well-sm cmt">
+                  <span class="cmt-title">{{chat.name}}:</span>
+                  <span class="cmt-time pull-right"><span am-time-ago="{{chat.datetime}}"></span></span><br>
+                  <span class="chat-content">{{chat.content}}</span>
+                </div>
+              </div>                  
+            </div><br>
+
+            <div class="row">
+              <div class="col-md-12">
+                <form ng-submit="addChatMessage(projectId, content)"> 
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                     
+                    </div>
+                    <input type="text" ng-model="content" cols="10" rows="3" class="form-control" placeholder="Write a reply..." required><br>
+                  </div>
+
+                    <div class="text-center send-message">
+                      <input type="submit" class="btn btn-info" value="Send Message">
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div ng-hide="isPayed()">
+            <div class="text-center chat-paid-spacing" ng-if="!project.status.paid">
+              <button class="btn btn-success btn-md" data-toggle="modal" data-target="#creditPopup">Accept Project</button>
+            </div>
+            <div class="text-center chat-paid-spacing" ng-if="project.status.paid && !project.status.finished">
+              <button class="btn btn-primary btn-md" ng-click="finishProject(projectId)">Finish Project</button>
+            </div>
+          </div>
+            <div class="text-center" ng-if="!project.status.finished && !project.status.paid">
+              <button class="btn btn-danger btn-md" ng-click="cancelProject(projectId)">Work with someone else</button>
+            </div>
+            <div class="text-center" ng-if="project.status.finished && project.status.paid">
+              <h4>project complete!</h4>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="creditPopup">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form class="form-horizontal" stripe-form="stripeCallback" role="form" ng-submit="paid()">     
+            <legend class="text-center">HireBoo Payment</legend>
+        
+            <div class="text-danger">
+              {{error}}
+            </div>
+        
+              <fieldset>
+                <div class="form-group">
+                  <div class="col-sm-12 number">
+                    <input class="card-number"ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" name="card" >
+                    <!-- <input type="text" class="form-control" size="20" ng-model="card.number" data-stripe="number" placeholder="Debit/Credit Card Number"> -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-6 cvc">
+                    <input class="cvc-number" ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc">
+                  </div>
+              <!-- card exp date (MM/YYYY) -->
+                  <div class="col-sm-6 expire,">
+                    <input class="expire-number" ng-model="expiry" placeholder="MM/YYYY" payments-format="expiry" payments-validated="expiry" name="expiry">
+                  </div>
+                </div>
+             
+              <!-- <div class="form-group">
+                <div class="col-sm-9">
+                  <div class="row">
+                    <div class="col-xs-3">
+                       <select class="form-control col-sm-2" name="expiry-month" id="expiry-month" ng-model="card.expMonth">
+                        <option value="01">Jan (01)</option>
+                        <option value="02">Feb (02)</option>
+                        <option value="03">Mar (03)</option>
+                        <option value="04">Apr (04)</option>
+                        <option value="05">May (05)</option>
+                        <option value="06">June (06)</option>
+                        <option value="07">July (07)</option>
+                        <option value="08">Aug (08)</option>
+                        <option value="09">Sep (09)</option>
+                        <option value="10">Oct (10)</option>
+                        <option value="11">Nov (11)</option>
+                        <option value="12">Dec (12)</option>
+                      </select>
+                    </div>
+                    <div class="col-xs-3">
+                      <select class="form-control" name="expiry-year" ng-model="card.expYear">
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                      </select>
+                </div>
+                </div>
+                </div>
+                </div>-->
+                <div class="form-group">
+                  <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-success">Pay $500</button>
+                  </div>
+                </div>
+              </fieldset>
+
+            </form>
+          </div>
+        </div>   
+      </div>
+    </div>
+
+  	<div class="col-md-5 fixed-project-disc">
+  	  <div class="test-width">
+  		  <h4 class="text-center subheading">{{project.description.title}}</h4>
+  				
+  			<div class="date text-center">
+  				<h6>{{project.date_range.date_posted | date: short}}</h6>
+  			</div>
+
+  			<div class="website text-center">
+  				 <p><a class="main-website" ng-href="{{project.description.client_website}}" target="_blank">{{project.description.client_website}}</a></p>
+  			</div>
+  			
+  			<div class="listing-info-spacing">
+
+  				 <div class="description">
+  	          <h5 class="heading">Description:</h5>
+  	          <p>{{project.description.description}}</p>     
+  	       </div>
+
+  	       <div class="inspiration-sites">
+  	          <h5 class="heading">Inspiration Sites:</h5>
+  	          <p><a ng-repeat="inspiration in project.description.examples track by $index" href="{{inspiration}}" target="_blank"> {{inspiration}}</a></p>          
+  	        </div>
+
+  	        <div class="design-provided">
+  	           <h5 class="heading">Design Provided:</h5>
+  	           <p class="design-provided-p" ng-if="project.description.design_provided"> Yes </p>
+  	           <p class="design-provided-p" ng-if="!project.description.design_provided"> No </p>  
+  	        </div>
+
+  	        <div class="platform">
+  	           <h5 class="heading">Platform:</h5>
+  	           <p>{{project.description.platform}}</p>     
+  	         </div>
+
+  	    </div>  
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+

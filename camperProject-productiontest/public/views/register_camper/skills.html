@@ -1,0 +1,54 @@
+<div class="form-group">
+
+
+	<div class="text-center">
+		<h4 class="subheading-spacing-register"> Development Platform </h4>
+	</div>
+
+	<div class="col-md-6 col-md-offset-5">
+		<div class="radio">
+			<label><input type="radio" ng-model="user.camper_info.area" value="web-development">
+				Web Development</label>	
+		</div>
+			
+		<div class="radio">
+			<label> <input type="radio" ng-model="user.camper_info.area" value="ios">
+			iOs</label>	
+		</div>
+
+		<div class="radio">
+			<label> <input type="radio" ng-model="user.camper_info.area" value="android">
+			Android</label>
+		</div>
+		
+	</div>
+
+</div>
+
+
+<!-- <div class="form-group">
+	<h5>Languages:</h5>
+	
+		<ul>
+			<li ng-repeat="language in user.camper_info.languages"> {{language}} </li>
+		</ul>
+	
+	
+		<input type="text" class="form-control" ng-model="lang">
+		<a ng-click="add_language(lang)" class="btn btn-block btn-info"> add </a>
+	
+</div> -->
+	
+
+
+
+<div class="form-group row">
+
+	<div class="col-md-4 col-md-offset-4" ng-if="user.camper_info.area">
+	
+		<button type="submit" class="btn btn-block btn-info" ng-if="logged_in"> Finish </button>
+	
+	</div>
+	
+	
+</div>
